@@ -66,6 +66,13 @@
                         <b-button variant="danger">Transferencia bancaria</b-button>
                     </b-col>
                 </b-row>
+
+                <!-- línea 7: enviar -->
+                <b-row>
+                    <b-col>
+                        <b-button variant="primary">Enviar</b-button>                 
+                    </b-col>                    
+                </b-row>
             </b-container>
             
         </b-form> 
