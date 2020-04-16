@@ -81,7 +81,7 @@
 
 <script>
 export default {
-    name: 'Form',
+    name: 'Jugador',
     data(){
         return {
             texto: '',

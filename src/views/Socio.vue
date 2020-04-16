@@ -1,46 +1,30 @@
 <template>
-    <div class="mt-5">
-        <b-button variant="success">Texto</b-button>
-        <b-button variant="info">Texto</b-button>
-        <b-button variant="danger">Texto</b-button>
-        <b-button variant="primary">Texto</b-button>
-        <b-button variant="warning">Texto</b-button>
-        <b-button variant="dark">Texto</b-button>
+    <div class="mt-5 text-center">
+        <h1>Contigo seguimos creciendo</h1>
+        <h2>¡Hazte socio!</h2>
 
         <b-row class="mt-5">
-            <b-col cols="12" md="4">
-                <b-card 
-                img-src="https://picsum.photos/600/300/?image=25"
-                img-top
-                >
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque nihil repellendus voluptatem harum qui odio, ab fugiat eum, omnis architecto accusantium expedita vel sed officiis ea voluptatibus dicta id ratione?</p>
-                    <b-button variant="dark" href="#">Texto</b-button>
+            <b-col>
+                <b-card img-src="https://picsum.photos/600/300/?image=25" img-top>
+                    
+                    <b-row>
+                        <b-col>
+                            <label for="metodoPago">Método de pago:</label>
+                        </b-col>
+                        <b-col cols="12">
+                            <b-button variant="info" class="mr-2 mb-4">Paypal</b-button>
+                            <b-button variant="success" class="mr-2 mb-4">Tarjeta crédito/débito</b-button>
+                            <b-button variant="danger" class="mb-4">Transferencia bancaria</b-button>
+                        </b-col>
+                    </b-row>
                 </b-card>
-            </b-col>
-            <b-col cols="12" md="4">
-                <b-card 
-                img-src="https://picsum.photos/600/300/?image=25"
-                img-top
-                >
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque nihil repellendus voluptatem harum qui odio, ab fugiat eum, omnis architecto accusantium expedita vel sed officiis ea voluptatibus dicta id ratione?</p>
-                    <b-button variant="dark" href="#">Texto</b-button>
-                </b-card>
-            </b-col>
-            <b-col cols="12" md="4">
-                <b-card 
-                img-src="https://picsum.photos/600/300/?image=25"
-                img-top
-                >
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque nihil repellendus voluptatem harum qui odio, ab fugiat eum, omnis architecto accusantium expedita vel sed officiis ea voluptatibus dicta id ratione?</p>
-                    <b-button variant="dark" href="#">Texto</b-button>
-                </b-card>
-            </b-col>
+            </b-col>            
         </b-row>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Cards'
+    name: 'Socio'
 }
 </script>
