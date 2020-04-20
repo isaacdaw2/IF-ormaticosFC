@@ -15,7 +15,7 @@
               <b-nav-item :to="{name: 'Socio'}">Inscribirse como socio</b-nav-item>
               <b-nav-item :to="{name: 'Jugador'}">Inscribirse como jugador</b-nav-item>              
               <b-nav-item :to="{name: 'Entrenador'}">Enviar solicitud de entrenador</b-nav-item>
-              <b-nav-item :to="{name: 'Iniciar'}">Iniciar sesión</b-nav-item>
+              <b-nav-item :to="{name: 'Iniciar'}">Registro / Iniciar sesión</b-nav-item>
             </b-navbar-nav>
 
           </b-collapse>

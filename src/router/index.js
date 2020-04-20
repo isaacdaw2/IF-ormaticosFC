@@ -28,6 +28,11 @@ Vue.use(VueRouter)
     path: '/iniciar',
     name: 'Iniciar',
     component: () => import(/* webpackChunkName: "Iniciar" */ '../views/Iniciar.vue')
+  },
+  {
+    path: '/registrar',
+    name: 'Registrar',
+    component: () => import(/* webpackChunkName: "Registrar" */ '../views/Registrar.vue')
   }
 ]
 

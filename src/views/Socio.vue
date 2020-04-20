@@ -5,7 +5,9 @@
 
         <b-row class="mt-5">
             <b-col>
-                <b-card img-src="https://picsum.photos/600/300/?image=25" img-top>
+                <b-card>
+                <b-card-img :src="require('../assets/Socios.jpg')"></b-card-img>
+
                     
                     <b-row>
                         <b-col>
