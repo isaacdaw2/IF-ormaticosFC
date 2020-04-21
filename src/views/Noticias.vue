@@ -31,25 +31,25 @@
             <b-card
                 bg-variant="primary"
                 text-variant="white"
-                header="Instalaciones"
+                header="Historia del club"
                 class="text-center">
-                <b-card-text>Conoce nuestras instalaciones</b-card-text>
+                <b-card-text>Conoce nuestra historia</b-card-text>                                
             </b-card>
 
             <b-card
                 bg-variant="secondary"
                 text-variant="white"
-                header="Plantillas"
+                header="Instalaciones"
                 class="text-center">
-                <b-card-text>Conoce nuestras plantillas</b-card-text>
+                <b-card-text>Conoce nuestras instalaciones</b-card-text>                
             </b-card>
 
             <b-card
                 bg-variant="success"
                 text-variant="white"
-                header="Resultados"
+                header="Plantillas"
                 class="text-center">
-                <b-card-text>Mira como nos ha ido en los últimos partidos</b-card-text>
+                <b-card-text>Conoce nuestras plantillas</b-card-text>                
             </b-card>
         </b-card-group>
       </div>
@@ -68,41 +68,22 @@
             <b-card
                 bg-variant="warning"
                 text-variant="white"
-                header="Warning"
+                header="Próximos partidos"
                 class="text-center">
-                <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+                <b-card-text>Aquí puedes ver contra quien jugamos el próximo encuentro</b-card-text>
             </b-card>
 
             <b-card
                 bg-variant="danger"
                 text-variant="white"
-                header="Danger"
+                header="Resultados"
                 class="text-center">
-                <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
+                <b-card-text>Mira como nos ha ido en los últimos partidos</b-card-text>
             </b-card>
         </b-card-group>
       </div>
 
-      <!-- Tercera línea de cards -->                      
-      <div class="mt-3">
-        <b-card-group deck="deck">
-            <b-card bg-variant="light" header="Light" class="text-center">
-                <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
-            </b-card>
-
-            <b-card
-                bg-variant="dark"
-                header="Dark"
-                text-variant="white"
-                class="text-center">
-                <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
-            </b-card>
-
-            <b-card header="Default" class="text-center">
-                <b-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b-card-text>
-            </b-card>
-        </b-card-group>
-      </div>
+      
     </div>
   </div>    
 </template>
