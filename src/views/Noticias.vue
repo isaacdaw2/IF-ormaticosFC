@@ -41,7 +41,7 @@
                 text-variant="white"
                 header="Instalaciones"
                 class="text-center">
-                <b-card-text>Conoce nuestras instalaciones</b-card-text>                
+                <b-card-text>Contempla nuestras instalaciones</b-card-text>                
             </b-card>
 
             <b-card
@@ -81,6 +81,27 @@
                 <b-card-text>Mira como nos ha ido en los últimos partidos</b-card-text>
             </b-card>
         </b-card-group>
+      </div>
+
+      <!-- cards horizontales -->
+      <div class="mt-3">
+        <b-card no-body="no-body" class="overflow-hidden">
+            <b-row no-gutters="no-gutters">
+                <b-col md="6">
+                    <b-card-img
+                        :src="require('../assets/logo_rfef.jpg')"
+                        alt="Image"
+                        class="rounded-0"></b-card-img>
+                </b-col>
+                <b-col md="6">
+                    <b-card-body title="Suspensión de las competiciones">
+                        <b-card-text>
+                            La RFEF aprueba la suspensión de todas las competiciones no profesionales hasta que las autoridades consideren que se pueden reanudar sin riesgo
+                        </b-card-text>
+                    </b-card-body>
+                </b-col>
+            </b-row>
+        </b-card>
       </div>
 
       
