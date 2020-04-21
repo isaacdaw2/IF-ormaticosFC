@@ -6,7 +6,9 @@
         <b-container>
 
           <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-          <b-navbar-brand :to="{name: 'Noticias'}">IF-ormáticos FC</b-navbar-brand>
+          <b-navbar-brand :to="{name: 'Noticias'}">
+            <img src="./assets/balon.png" alt="" width="40">
+            IF-ormáticos FC</b-navbar-brand>
 
           <b-collapse id="nav-collapse" is-nav>
 
