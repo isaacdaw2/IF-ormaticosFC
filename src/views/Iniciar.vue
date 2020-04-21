@@ -32,7 +32,7 @@
       <!-- Botón de iniciar -->
       <b-row class="mt-4">
         <b-col>
-          <b-button variant="success">Iniciar</b-button>
+          <b-button variant="success">Acceder</b-button>
         </b-col>        
       </b-row>     
     </b-card>

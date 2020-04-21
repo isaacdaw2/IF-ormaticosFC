@@ -1,19 +1,11 @@
-# bootstrapvue
+### Para ejecutar el proyecto es necesario tener el node.js instalado ###
 
-## Project setup
-```
-npm install
-```
+https://nodejs.org/es/
 
-### Compiles and hot-reloads for development
-```
+### También es necesario ejecutar el siguiente comando para activar Bootstrap + Vue ###
+
+npm install vue bootstrap-vue bootstrap
+
+### Una vez instalado, podemos utilizar el siguiente comando para arrancar el proyecto (comprobar que se está en la carpeta correcta) ###
+
 npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
