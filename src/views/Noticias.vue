@@ -5,8 +5,8 @@
     <b-carousel
         id="carousel-fade"
         style="text-shadow: 0px 0px 2px #000"
-        fade="fade"
-        indicators="indicators"
+        fade
+        indicators
         img-width="1024"
         img-height="480">
         <b-carousel-slide
@@ -32,7 +32,8 @@
                 bg-variant="primary"
                 text-variant="white"
                 header="Historia del club"
-                class="text-center">
+                class="text-center"
+                href="#">
                 <b-card-text>Conoce nuestra historia</b-card-text>                                
             </b-card>
 
