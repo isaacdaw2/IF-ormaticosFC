@@ -61,11 +61,32 @@
                         <label class="mr-2" for="metodoPago">Método de pago:</label>
                     </b-col>
                     <b-col class="sm-2">
-                        <b-button variant="outline-info" class="mr-2 mb-2">Paypal</b-button>
+                        <b-button variant="outline-info" class="mr-2 mb-2" v-on:click="pagoPaypal()">Paypal</b-button>
                         <b-button variant="outline-success" class="mr-2 mb-2">Tarjeta crédito/débito</b-button>
                         <b-button variant="outline-danger" class="mr-2 mb-2">Transferencia bancaria</b-button>
                     </b-col>
                 </b-row>
+
+                <!-- método de pago: Paypal -->
+                <div id="paypal" v-show="false">
+                    <b-row>
+                        <b-col>
+                            Correo electrónico:
+                        </b-col>
+                        <b-col>
+                            <b-form-input type="email" placeholder="Introduce un correo eletrónico"></b-form-input>
+                        </b-col>                 
+                    </b-row>
+                    <!-- Contraseña paypal-->
+                    <b-row class="mt-4">
+                        <b-col>
+                        <b-card-text>Contraseña:</b-card-text>
+                        </b-col>
+                        <b-col>
+                        <b-form-input type="password" placeholder="Introduce una contraseña"></b-form-input>
+                        </b-col>
+                    </b-row>
+                </div>
 
                 <!-- línea 7: enviar -->
                 <b-row>
@@ -121,7 +142,18 @@ export default {
     computed: {
         comprobar(){
             return this.texto.length > 2 ? true : false
-        }
+        }       
+
+    },
+    methods: {
+        pagoPaypal() {
+            if(document.getElementById("paypal").style.display == 'block'){
+                return document.getElementById("paypal").style.display = 'none';
+            } else {
+                return document.getElementById("paypal").style.display = 'block';
+            }
+            
+        }        
     }
 }
 </script>
