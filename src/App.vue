@@ -13,11 +13,11 @@
           <b-collapse id="nav-collapse" is-nav>
 
             <b-navbar-nav>
-              <b-nav-item :to="{name: 'Noticias'}">Noticias del club</b-nav-item>
-              <b-nav-item :to="{name: 'Iniciar'}">Registro / Iniciar sesión</b-nav-item>
-              <b-nav-item :to="{name: 'Socio'}" disabled>Inscribirse como socio</b-nav-item>
-              <b-nav-item :to="{name: 'Jugador'}" disabled>Inscribirse como jugador</b-nav-item>              
-              <b-nav-item :to="{name: 'Entrenador'}" disabled>Enviar solicitud de entrenador</b-nav-item>              
+              <b-nav-item  v-show="visto1" :to="{name: 'Noticias'}">Noticias del club</b-nav-item>
+              <b-nav-item v-show="visto2" :to="{name: 'Socio'}">Inscribirse como socio</b-nav-item>
+              <b-nav-item v-show="visto3" :to="{name: 'Jugador'}">Inscribirse como jugador</b-nav-item>              
+              <b-nav-item v-show="visto4" :to="{name: 'Entrenador'}">Enviar solicitud de entrenador</b-nav-item>       
+              <b-nav-item v-show="!visto" :to="{name: 'Iniciar'} ">Registro / Iniciar sesión</b-nav-item>       
             </b-navbar-nav>
 
           </b-collapse>
