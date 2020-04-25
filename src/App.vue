@@ -5,12 +5,18 @@
 
         <b-container>
 
-          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+          <b-navbar-toggle target="navbar-toggle-collapse">
+            <template v-slot:default="{ expanded }">
+              <b-icon v-if="expanded" icon="chevron-bar-up"></b-icon>
+              <b-icon v-else="v-else" icon="chevron-bar-down"></b-icon>
+            </template>
+          </b-navbar-toggle>
+          
           <b-navbar-brand :to="{name: 'Noticias'}">
             <img src="./assets/balon.png" alt="" width="40">
             IF-ormáticos FC</b-navbar-brand>
 
-          <b-collapse id="nav-collapse" is-nav>
+          <b-collapse id="navbar-toggle-collapse" is-nav>
 
             <b-navbar-nav>
               <b-nav-item :to="{name: 'Noticias'}">Noticias del club</b-nav-item>
