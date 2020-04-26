@@ -20,7 +20,7 @@
             <b-navbar-nav>
 
               <b-nav-item  v-show="false" :to="{name: 'Noticias'}">Noticias del club</b-nav-item>
-              <b-nav-item v-show="false" :to="{name: 'Socio'}">Inscribirse como socio</b-nav-item>
+              <b-nav-item v-show="true" :to="{name: 'Socio'}">Inscribirse como socio</b-nav-item>
               <b-nav-item  :to="{name: 'Jugador'}">Inscribirse como jugador</b-nav-item>              
               <b-nav-item v-show="false" :to="{name: 'Entrenador'}">Enviar solicitud de entrenador</b-nav-item>       
               <b-nav-item v-show="true" :to="{name: 'Iniciar'} ">Registro / Iniciar sesión</b-nav-item>       

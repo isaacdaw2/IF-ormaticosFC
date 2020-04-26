@@ -93,7 +93,7 @@
                 <b-col md="6">
                     <b-card-img
                         :src="require('../assets/logo_rfef.jpg')"
-                        alt="Image"
+                        alt="logo"
                         class="rounded-0"></b-card-img>
                 </b-col>
                 <b-col md="6">
@@ -114,7 +114,7 @@
                 <b-col md="6">
                     <b-card-img
                         :src="require('../assets/Comunicado_oficial.jpg')"
-                        alt="Image"
+                        alt="comunicado"
                         class="rounded-0"></b-card-img>
                 </b-col>
                 <b-col md="6">
@@ -135,7 +135,7 @@
                 <b-col md="6">
                     <b-card-img
                         :src="require('../assets/resultados.jpg')"
-                        alt="Image"
+                        alt="resultados"
                         class="rounded-0"></b-card-img>
                 </b-col>
                 <b-col md="6">
@@ -156,7 +156,7 @@
                 <b-col md="6">
                     <b-card-img
                         :src="require('../assets/puesto_entrenador.jpg')"
-                        alt="Image"
+                        alt="puesto_entrenador"
                         class="rounded-0"></b-card-img>
                 </b-col>
                 <b-col md="6">
