@@ -8,7 +8,7 @@
                 <!-- línea 1: categoría -->
                 <b-row class="mb-3">
                     <b-col>
-                        <label class="mr-sm-2" for="categorias">Categoría:</label>
+                        <label for="categorias">Categoría:</label>
                     </b-col>
                     <b-col>
                         <b-form-select v-model="categoria" :options="categorias"></b-form-select>
@@ -18,7 +18,7 @@
                 <!-- línea 2: talla de camiseta -->
                 <b-row class="mb-3">
                     <b-col>
-                        <label class="mr-sm-2" for="tallaCamiseta">Talla de camiseta:</label>
+                        <label for="tallaCamiseta">Talla de camiseta:</label>
                     </b-col>
                     <b-col>
                         <b-form-select v-model="tallaCamiseta" :options="tallas"></b-form-select>
@@ -28,7 +28,7 @@
                 <!-- línea 3: talla de pantalón -->
                 <b-row class="mb-3">
                     <b-col>
-                        <label class="mr-sm-2" for="tallaPantalon">Talla de pantalón:</label>
+                        <label for="tallaPantalon">Talla de pantalón:</label>
                     </b-col>
                     <b-col>
                         <b-form-select v-model="tallaPantalon" :options="tallas"></b-form-select>
@@ -38,7 +38,7 @@
                 <!-- línea 4: talla de medias -->
                 <b-row class="mb-3">
                     <b-col>
-                        <label class="mr-sm-2" for="tallaMedias">Talla de medias:</label>
+                        <label for="tallaMedias">Talla de medias:</label>
                     </b-col>
                     <b-col>
                         <b-form-select v-model="tallaMedias" :options="tallas"></b-form-select>
@@ -48,7 +48,7 @@
                 <!-- línea 5: talla de abrigo -->
                 <b-row class="mb-3">
                     <b-col>
-                        <label class="mr-sm-2" for="tallaAbrigo">Talla de abrigo:</label>
+                        <label for="tallaAbrigo">Talla de abrigo:</label>
                     </b-col>
                     <b-col>
                         <b-form-select v-model="tallaAbrigo" :options="tallas"></b-form-select>
@@ -57,10 +57,10 @@
 
                 <!-- línea 6: método de pago -->
                 <b-row class="mb-3">
-                    <b-col class="sm-10">
-                        <label class="mr-2" for="metodoPago">Método de pago:</label>
+                    <b-col>
+                        <label for="metodoPago">Método de pago:</label>
                     </b-col>
-                    <b-col class="sm-2">
+                    <b-col>
                         <b-button variant="outline-info" class="mr-2 mb-2" v-on:click="pagoPaypal()">Paypal</b-button>
                         <b-button variant="outline-success" class="mr-2 mb-2" v-on:click="pagoTarjeta()">Tarjeta crédito/débito</b-button>
                         <b-button variant="outline-danger" class="mr-2 mb-2" v-on:click="pagoDomiciliacion()">Domiciliación bancaria</b-button>
@@ -107,29 +107,32 @@
                     align="center">
                     <!-- Número de tarjeta-->
                     <b-row>
-                        <b-col>
+                        <b-col class="col-4">
                             Número de tarjeta:
                         </b-col>
-                        <b-col>
-                            <b-form-input type="text" placeholder="Introduce el número"></b-form-input>
+                        <b-col class="col-8">
+                            <b-form-input type="number" placeholder="Introduce el número" :state="comprobarNumeroTarjeta" v-model="numeroTarjeta"></b-form-input>                            
                         </b-col>
                     </b-row>
                     <!-- Caducidad tarjeta-->
                     <b-row class="mt-4">
-                        <b-col>
+                        <b-col class="col-4">
                             Caducidad:
                         </b-col>
-                        <b-col>
-                            <input type="text" size="1" placeholder="Mes"> / <input type="text" size="4" placeholder="Año">
-                        </b-col>
+                        
+                        <b-col class="col-8">
+                            <b-form-input type="number" class="mb-2" placeholder="Mes" :state="comprobarMesTarjeta" v-model="mesTarjeta"></b-form-input> 
+                            <span class=""> / </span>
+                            <b-form-input type="number" class="mb-2" placeholder="Año" :state="comprobarAñoTarjeta" v-model="añoTarjeta"></b-form-input> 
+                        </b-col>                      
                     </b-row>
                     <!-- CVV tarjeta-->
                     <b-row class="mt-4">
-                        <b-col>
-                            <b-card-text>Código de seguridad / CVV:</b-card-text>
+                        <b-col class="col-4">
+                            Código de seguridad / CVV:
                         </b-col>
-                        <b-col>
-                            <b-form-input type="number" placeholder="Introduce CVV"></b-form-input>
+                        <b-col class="col-8"> 
+                            <b-form-input type="number" placeholder="Introduce CVV" :state="comprobarCVVTarjeta" v-model="cvvTarjeta"></b-form-input>
                         </b-col>
                     </b-row>
                 </b-card>
@@ -183,9 +186,10 @@ export default {
     name: 'Jugador',
     data(){
         return {
-            texto: '',
-            check: [],
-            radio: null,
+            numeroTarjeta: '',
+            mesTarjeta: '',
+            añoTarjeta: '',
+            cvvTarjeta: '',
             categoria: null,
             tallaCamiseta: null,
             tallaPantalon: null,
@@ -218,10 +222,21 @@ export default {
         }
     },
     computed: {
-        comprobar(){
-            return this.texto.length > 2 ? true : false
-        }       
-
+        comprobarNumeroTarjeta(){
+            return this.numeroTarjeta.length === 16 ? true : false
+        },
+        comprobarMesTarjeta(){
+            return  this.mesTarjeta.length === 2 && 
+                    this.mesTarjeta >= 1 &&
+                    this.mesTarjeta <= 12 ? true : false
+        },
+        comprobarAñoTarjeta(){
+            return  this.añoTarjeta.length === 4 && 
+                    this.añoTarjeta >= 2021 ? true : false
+        },
+        comprobarCVVTarjeta(){
+            return  this.cvvTarjeta.length === 3 ? true : false
+        }
     },
     methods: {
         pagoPaypal() {

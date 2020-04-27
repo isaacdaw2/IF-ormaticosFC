@@ -7,20 +7,19 @@
             <b-col>
                 <b-card>
                 <b-card-img :src="require('../assets/Socios.jpg')"></b-card-img>
-
                     
-                    <b-row>
+                    <b-row class="mt-3">
                         <b-col>
                             <label for="metodoPago">Método de pago:</label>
                         </b-col>
-                        <b-col cols="12">
+                        <b-col>
                             <b-button variant="outline-info" class="mr-2 mb-4" v-on:click="pagoPaypal()">Paypal</b-button>
                             <b-button variant="outline-success" class="mr-2 mb-4" v-on:click="pagoTarjeta()">Tarjeta crédito/débito</b-button>
                             <b-button variant="outline-danger" class="mb-4" v-on:click="pagoDomiciliacion()">Domiciliación bancaria</b-button>
                         </b-col>
                     </b-row>
 
-                    <!-- método de pago: Paypal -->                
+                <!-- método de pago: Paypal -->                
                 <b-card
                     id="paypal"
                     v-show="false"
@@ -64,26 +63,33 @@
                             Número de tarjeta:
                         </b-col>
                         <b-col>
-                            <b-form-input type="text" placeholder="Introduce el número de la tarjeta"></b-form-input>
+                            <b-form-input type="number" placeholder="Introduce el número" :state="comprobarNumeroTarjeta" v-model="numeroTarjeta"></b-form-input>  
+                            <small>16 dígitos</small>                          
                         </b-col>
                     </b-row>
                     <!-- Caducidad tarjeta-->
                     <b-row class="mt-4">
-                        <b-col>
+                        <b-col class="col-6">
                             Caducidad:
                         </b-col>
-                        <b-col>
-                            <input type="text" size="1" placeholder="Mes"> / 
-                            <input type="text" size="4" placeholder="Año">
+                        <b-col class="col-md-sm-lg-2">
+                            <b-form-input type="number" class="mb-2" placeholder="Mes" :state="comprobarMesTarjeta" v-model="mesTarjeta"></b-form-input>
+                            <small>2 dígitos</small> 
+                        </b-col>
+                        <label for="/" class="col-md-sm-lg-2">/</label>
+                        <b-col class="col-md-sm-lg-2">
+                            <b-form-input type="number" class="mb-2" placeholder="Año" :state="comprobarAñoTarjeta" v-model="añoTarjeta"></b-form-input>
+                            <small>4 dígitos</small> 
                         </b-col>
                     </b-row>
                     <!-- CVV tarjeta-->
                     <b-row class="mt-4">
                         <b-col>
-                            <b-card-text>Código de seguridad / CVV:</b-card-text>
+                            Código de seguridad / CVV:
                         </b-col>
                         <b-col>
-                            <b-form-input type="number" placeholder="Introduce CVV"></b-form-input>
+                            <b-form-input type="number" placeholder="Introduce CVV" :state="comprobarCVVTarjeta" v-model="cvvTarjeta"></b-form-input>
+                            <small>3 dígitos</small> 
                         </b-col>
                     </b-row>
                 </b-card>
@@ -135,6 +141,31 @@
 <script>
 export default {
     name: 'Socio',
+    data() {
+        return {
+            numeroTarjeta: '',
+            mesTarjeta: '',
+            añoTarjeta: '',
+            cvvTarjeta: ''   
+        }     
+    },
+    computed: {
+        comprobarNumeroTarjeta(){
+            return this.numeroTarjeta.length === 16 ? true : false
+        },
+        comprobarMesTarjeta(){
+            return  this.mesTarjeta.length === 2 && 
+                    this.mesTarjeta >= 1 &&
+                    this.mesTarjeta <= 12 ? true : false
+        },
+        comprobarAñoTarjeta(){
+            return  this.añoTarjeta.length === 4 && 
+                    this.añoTarjeta >= 2021 ? true : false
+        },
+        comprobarCVVTarjeta(){
+            return  this.cvvTarjeta.length === 3 ? true : false
+        }
+    },
     methods: {
         pagoPaypal() {
             if(document.getElementById("paypal").style.display == 'block'){
