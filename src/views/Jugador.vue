@@ -111,7 +111,7 @@
                     </b-col>
                     <b-col>
                         <b-form-input type="number" placeholder="Introduce el número de la tarjeta" :state="comprobarNumeroTarjeta" v-model="numeroTarjeta"></b-form-input>  
-                        <small>16 dígitos</small>                          
+                        <small class="text-success">16 dígitos</small>                          
                     </b-col>
                 </b-row>
                 <!-- Caducidad tarjeta-->
@@ -121,12 +121,12 @@
                     </b-col>
                     <b-col class="col-md-sm-lg-2">
                         <b-form-input type="number" class="mb-2" placeholder="Mes" :state="comprobarMesTarjeta" v-model="mesTarjeta"></b-form-input>
-                        <small>2 dígitos</small> 
+                        <small class="text-success">2 dígitos</small> 
                     </b-col>
                     <label for="/" class="col-md-sm-lg-2">/</label>
                     <b-col class="col-md-sm-lg-2">
                         <b-form-input type="number" class="mb-2" placeholder="Año" :state="comprobarAñoTarjeta" v-model="añoTarjeta"></b-form-input>
-                        <small>4 dígitos</small> 
+                        <small class="text-success">4 dígitos</small> 
                     </b-col>
                 </b-row>
                 <!-- CVV tarjeta-->
@@ -136,7 +136,7 @@
                     </b-col>
                     <b-col>
                         <b-form-input type="number" placeholder="Introduce CVV" :state="comprobarCVVTarjeta" v-model="cvvTarjeta"></b-form-input>
-                        <small>3 dígitos</small> 
+                        <small class="text-success">3 dígitos</small> 
                     </b-col>
                 </b-row>
             </b-card>
