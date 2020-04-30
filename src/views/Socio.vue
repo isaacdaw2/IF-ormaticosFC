@@ -14,9 +14,9 @@
                             <label for="metodoPago">Método de pago:</label>
                         </b-col>
                         <b-col cols="12">
-                            <b-button variant="info" class="mr-2 mb-4">Paypal</b-button>
-                            <b-button variant="success" class="mr-2 mb-4">Tarjeta crédito/débito</b-button>
-                            <b-button variant="danger" class="mb-4">Transferencia bancaria</b-button>
+                            <b-button variant="outline-info" class="mr-2 mb-4">Paypal</b-button>
+                            <b-button variant="outline-success" class="mr-2 mb-4">Tarjeta crédito/débito</b-button>
+                            <b-button variant="outline-danger" class="mb-4">Transferencia bancaria</b-button>
                         </b-col>
                     </b-row>
                 </b-card>

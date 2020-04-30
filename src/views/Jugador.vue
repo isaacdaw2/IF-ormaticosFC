@@ -61,9 +61,9 @@
                         <label class="mr-2" for="metodoPago">Método de pago:</label>
                     </b-col>
                     <b-col class="sm-2">
-                        <b-button variant="info" class="mr-2">Paypal</b-button>
-                        <b-button variant="success" class="mr-2">Tarjeta crédito/débito</b-button>
-                        <b-button variant="danger">Transferencia bancaria</b-button>
+                        <b-button variant="outline-info" class="mr-2" v-on="eleccion">Paypal</b-button>
+                        <b-button variant="outline-success" class="mr-2">Tarjeta crédito/débito</b-button>
+                        <b-button variant="outline-danger">Transferencia bancaria</b-button>
                     </b-col>
                 </b-row>
 
@@ -122,6 +122,9 @@ export default {
         comprobar(){
             return this.texto.length > 2 ? true : false
         }
+    },
+    methods: {
+        
     }
 }
 </script>
