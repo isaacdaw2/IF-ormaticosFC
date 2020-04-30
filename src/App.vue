@@ -5,19 +5,27 @@
 
         <b-container>
 
-          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+          <b-navbar-toggle target="navbar-toggle-collapse">
+            <template v-slot:default="{ expanded }">
+              <b-icon v-if="expanded" icon="chevron-bar-up"></b-icon>
+              <b-icon v-else icon="chevron-bar-down"></b-icon>
+            </template>
+          </b-navbar-toggle>
           <b-navbar-brand :to="{name: 'Noticias'}">
             <img src="./assets/balon.png" alt="" width="40">
             IF-ÓRMATICOS FC</b-navbar-brand>
 
-          <b-collapse id="nav-collapse" is-nav>
+          <b-collapse id="navbar-toggle-collapse" is-nav>
 
             <b-navbar-nav>
-              <b-nav-item :to="{name: 'Noticias'}">Noticias del club</b-nav-item>
-              <b-nav-item :to="{name: 'Socio'}">Inscribirse como socio</b-nav-item>
-              <b-nav-item :to="{name: 'Jugador'}">Inscribirse como jugador</b-nav-item>              
-              <b-nav-item :to="{name: 'Entrenador'}">Enviar solicitud de entrenador</b-nav-item>
-              <b-nav-item :to="{name: 'Iniciar'}">Registro / Iniciar sesión</b-nav-item>
+
+              <b-nav-item v-show="true" :to="{name: 'Noticias'}">Noticias del club</b-nav-item>
+              <b-nav-item v-show="false" :to="{name: 'Socio'}">Inscribirse como socio</b-nav-item>
+              <b-nav-item v-show="false" :to="{name: 'Jugador'}">Inscribirse como jugador</b-nav-item>              
+              <b-nav-item v-show="false" :to="{name: 'Entrenador'}">Enviar solicitud de entrenador</b-nav-item>       
+              <b-nav-item v-show="true" :to="{name: 'Iniciar'} ">Registro / Iniciar sesión</b-nav-item>       
+
+             
             </b-navbar-nav>
 
           </b-collapse>
